@@ -1,15 +1,15 @@
 import express from "express";
 import "dotenv/config";
 import { PrismaClient } from "@prisma/client";
+import getDataRouter from "./routes/getdata.js";
+import insertRouter from "./routes/insert.js";
 
 const app = express();
-const prisma = new PrismaClient();
 
 const PORT = process.env.PORT || 4000;
 
-app.get("/", (req, res) => {
-  res.json({ msg: "Hello World" });
-});
+app.use("/", insertRouter);
+app.use("/", getDataRouter);
 
 app.listen(PORT, () => {
   console.log(` > LISTEN TO PORT ${PORT}`);
