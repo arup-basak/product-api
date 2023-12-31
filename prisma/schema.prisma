@@ -9,7 +9,6 @@ datasource db {
 
 model Product {
   id      String  @id @default(auto()) @map("_id") @db.ObjectId
-  uid     String
   data    String
   premium Boolean @default(false)
 }

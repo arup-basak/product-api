@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import express from "express";
-import { uid } from "uid";
 
 const router = express.Router();
 const prisma = new PrismaClient();
@@ -21,7 +20,6 @@ router.post("/", async (req, res) => {
   try {
     const resp = await prisma.product.create({
       data: {
-        uid: uid(8),
         data: storeData,
       },
     });

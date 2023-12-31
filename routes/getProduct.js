@@ -9,7 +9,7 @@ router.get("/:id", async (req, res) => {
     const id = req.params.id;
     const data = await prisma.product.findFirst({
       where: {
-        uid: id,
+        id: id,
       },
     });
 
