@@ -19,6 +19,10 @@ app.use("/insert", insertRouter);
 app.use("/search", getDataRouter);
 app.use("/delete", deleteRouter);
 
+app.use((req, res) => {
+  res.send("Welcome To Product")
+})
+
 app.listen(PORT, () => {
   console.log(` > LISTEN TO PORT ${PORT}`);
 });
